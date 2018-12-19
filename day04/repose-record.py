@@ -42,8 +42,8 @@ def part_one():
     guards_total = {}
     most_slept = 0
     most_slept_guard = None
-    for g in guards:
-        guards_total[g] = sum(guards[g])
+    for g, time_sheet in guards.items():
+        guards_total[g] = sum(time_sheet)
         if guards_total[g] > most_slept:
             most_slept_guard = g
             most_slept = guards_total[g]
@@ -54,8 +54,8 @@ def part_two():
     guards = get_guards_time_distribution()
     most_slept_minute = -1
     most_slept_guard = None
-    for g in guards:
-        m = max(guards[g])
+    for g, time_sheet in guards.items():
+        m = max(time_sheet)
         if m > most_slept_minute:
             most_slept_minute = m
             most_slept_guard = g
