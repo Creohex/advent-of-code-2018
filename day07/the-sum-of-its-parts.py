@@ -33,8 +33,7 @@ def part_two():
     while len(graph) > 0:
         # check worker's tasks for completion
         for worker in [(w, job) for w, job in workers.items() if job is not None]:
-            w = worker[0]
-            task, started = worker[1]
+            w, (task, started) = worker
             if time >= started + task_time_table[task]:
                 workers[w] = None
                 del graph[task]
