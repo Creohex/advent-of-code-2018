@@ -5,7 +5,6 @@ def read_input(raw = False):
     file = "input.txt"
     return open(file).readlines() if raw else [re.findall(r'[A-Z]', _.strip()[5:]) for _ in open(file)]
 
-
 def part_one():
     input = read_input()
     keys = set(re.findall(r'[A-Z]', ''.join([_.strip()[1:] for _ in read_input(True)])))
@@ -21,7 +20,7 @@ def part_one():
 
     return order
 
-def part_two_v1():
+def part_two():
     input = read_input()
     keys = set(re.findall(r'[A-Z]', ''.join([_.strip()[1:] for _ in read_input(True)])))
     graph = {k: set() for k in keys}
@@ -61,4 +60,4 @@ def part_two_v1():
 
 
 print(part_one())
-print(part_two_v1())
+print(part_two())
