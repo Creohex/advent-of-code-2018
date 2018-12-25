@@ -55,7 +55,6 @@ def part_one():
     # return max area
     return max(total_areas.values())
 
-
 def part_two():
     coords = read_input()
     left, right, bottom, top = get_bounds(coords)
