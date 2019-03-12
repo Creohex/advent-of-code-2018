@@ -5,7 +5,7 @@ def read_input():
     return list(map(tuple, map(lambda _: (int(m[0]) for m in re.finditer(r"\d+", _)), open('input.txt'))))
 
 def get_bounds(coords):
-    """ returns: (left, right, top, bottom) """
+    """ returns: (left, right, bottom, top) """
     return min(x for x, y in coords), max(x for x, y in coords), min(y for x, y in coords), max(y for x, y in coords)
 
 def build_coord_plane(coords):
